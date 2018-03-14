@@ -24,8 +24,125 @@ body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .open{position: fixed;width:150px;height:150px;border-radius: 75px;margin-top: 260px;left: 50%;;margin-left:-75px;background: url('https://i.imgur.com/MgMQjY5.png');background-color:black;background-size:100% 100%;z-index: 160;box-shadow: 0px 0px 50px white;transition:all 0.5s ease-in-out;}
 .openo{position: fixed;width:75px;height:75px;border-radius: 75px;left:50%;margin-top: -200px;margin-left:-35px;background: url('https://i.imgur.com/MgMQjY5.png');background-color:black;background-size:100% 100%;transform: rotate(360deg);z-index: -30;box-shadow: 0px 0px 50px white;transition:all 0.5s ease-in-out 0.1s;}
 
+#jsalarmclock{
+font-family: Tahoma;
+font-weight: bold;
+font-size: 12px;
+}
+
+#jsalarmclock div{
+margin-bottom: 0.8em;
+}
+
+#jsalarmclock div.leftcolumn{
+float: left;
+width: 150px;
+font-size: 13px;
+clear: left;
+}
+
+#jsalarmclock span{
+margin-right: 5px;
+}
+
+.button_menu {
+   background-color:#008CBA;
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	border-radius: 50%;
+}
+.button_menu:hover {
+    background-color: white;
+    color: black;
+}
+
+.select_menu {
+  width: 100px;
+  height: 28px;
+  background-color:white;
+  border: 1px solid red;
+  border-radius: 10px;
+  color: blue;
+}
+
+.text_menu {
+ width: 400px;
+  height: 28px;
+  background-color: white;
+  border: 1px solid red;
+  border-radius: 10px;
+  color: blue;
+}
 
 </style>
+
+<script >
+var jsalarm={
+	padfield:function(f){
+		return (f<10)? "0"+f : f
+	},
+	showcurrenttime:function(){
+		var dateobj=new Date()
+		var ct=this.padfield(dateobj.getHours())+":"+this.padfield(dateobj.getMinutes())+":"+this.padfield(dateobj.getSeconds())
+		this.ctref.innerHTML=ct
+		this.ctref.setAttribute("title", ct)
+		if (typeof this.hourwake!="undefined"){ //if alarm is set
+			if (this.ctref.title==(this.hourwake+":"+this.minutewake+":"+this.secondwake)){
+				clearInterval(jsalarm.timer)
+				window.location=document.getElementById("musicloc").value
+			}
+		}
+	},
+	init:function(){
+		var dateobj=new Date()
+		this.ctref=document.getElementById("alarm_alarm")
+		this.submitref=document.getElementById("submit_submit")
+		this.submitref.onclick=function(){
+			jsalarm.setalarm()
+			this.value="Alarm Set"
+			this.disabled=true
+			return false
+		}
+		this.resetref=document.getElementById("reset_reset")
+		this.resetref.onclick=function(){
+		jsalarm.submitref.disabled=false
+		jsalarm.hourwake=undefined
+		jsalarm.hourselect.disabled=false
+		jsalarm.minuteselect.disabled=false
+		jsalarm.secondselect.disabled=false
+		return false
+		}
+		var selections=document.getElementsByTagName("select")
+		this.hourselect=selections[0]
+		this.minuteselect=selections[1]
+		this.secondselect=selections[2]
+		for (var i=0; i<60; i++){
+			if (i<24) //If still within range of hours field: 0-23
+			this.hourselect[i]=new Option(this.padfield(i), this.padfield(i), false, dateobj.getHours()==i)
+			this.minuteselect[i]=new Option(this.padfield(i), this.padfield(i), false, dateobj.getMinutes()==i)
+			this.secondselect[i]=new Option(this.padfield(i), this.padfield(i), false, dateobj.getSeconds()==i)
+		}
+		jsalarm.showcurrenttime()
+		jsalarm.timer=setInterval(function(){jsalarm.showcurrenttime()}, 1000)
+	},
+	setalarm:function(){
+		this.hourwake=this.hourselect.options[this.hourselect.selectedIndex].value
+		this.minutewake=this.minuteselect.options[this.minuteselect.selectedIndex].value
+		this.secondwake=this.secondselect.options[this.secondselect.selectedIndex].value
+		this.hourselect.disabled=true
+		this.minuteselect.disabled=true
+		this.secondselect.disabled=true
+	}
+}
+</script>
+
 <script>
     $(function(){ $('.open').on('click', function(){$('.lefto').toggleClass('leftoo');$('.open').toggleClass('openo');});});
 </script>
@@ -121,7 +238,7 @@ for (i = 0; i < dropdown.length; i++) {
   <!-- Photo Grid -->
 <div class="w3-row-padding" id="myGrid" style="margin-bottom:28px">
   <div class="w3-quarter">
-    <img src="https://i.imgur.com/koU1lVc.jpg" style="width:100%" onclick="document.getElementById('lights').style.display='block'" alt="Lights">
+    <img src="https://i.imgur.com/yTwpJuul.jpg" style="width:100%" onclick="document.getElementById('lights').style.display='block'" alt="Lights">
 			<div  id="lights" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-yellow w3-center w3-wide" style="font-family:allerta;color:white;" >
@@ -151,9 +268,8 @@ for (i = 0; i < dropdown.length; i++) {
 					</div><!--w3 container-->
 				</div><!--end modal content-->
 			</div><!--end modal-->
-	
 			
-    <img src="https://i.imgur.com/ITK5psF.jpg" style="width:100%" onclick="document.getElementById('waterl').style.display='block'" alt="Water Levels">
+	<img src="https://i.imgur.com/ITK5psF.jpg" style="width:100%" onclick="document.getElementById('waterl').style.display='block'" alt="Water Levels">
 			<div  id="waterl" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-blue w3-center w3-wide" style="font-family:allerta;color:white;" >
@@ -165,6 +281,9 @@ for (i = 0; i < dropdown.length; i++) {
 					</div><!--w3 container-->
 				</div><!--end modal content-->
 			</div><!--end modal-->
+	
+	
+			
     
 	<img src="https://i.imgur.com/HXvdSpy.jpg" style="width:100%" onclick="document.getElementById('socket').style.display='block'" alt="Sockets">
 			<div  id="socket" class="w3-modal">
@@ -185,7 +304,22 @@ for (i = 0; i < dropdown.length; i++) {
   </div>
 
   <div class="w3-quarter">
-  <img src="https://i.imgur.com/3dn1Rz6.jpg" style="width:100%" onclick="document.getElementById('water').style.display='block'" alt="Water">
+  
+  <img src="https://i.imgur.com/utMFkUrl.jpg" style="width:100%" onclick="document.getElementById('temp').style.display='block'" alt="FAN">
+			<div  id="temp" class="w3-modal">
+				<div class="w3-modal-content w3-card-4 w3-animate-top">
+					<header class="w3-container w3-cyan w3-center w3-wide" style="font-family:allerta;color:white;" >
+						<span onclick="document.getElementById('temp').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
+						<h2><strong style="color:white;">TEMP</strong></h2>
+					</header>
+					<div class="w3-container w3-center w3-cyan " style="font-family:Cursive">
+						<img src="https://i.imgur.com/34dclJy.png" style="width:30%"><br/>
+						<font face="Century Gothic" color="white"><h2 align="center">30 deg</h2></font>
+					</div><!--w3 container-->
+				</div><!--end modal content-->
+			</div><!--end modal-->
+  
+	<img src="https://i.imgur.com/3dn1Rz6.jpg" style="width:100%" onclick="document.getElementById('water').style.display='block'" alt="Water">
 		<div  id="water" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-blue w3-center w3-wide" style="font-family:allerta;" >
@@ -201,7 +335,9 @@ for (i = 0; i < dropdown.length; i++) {
 				</div><!--end modal content-->
 			</div><!--end modal-->
     
-	 <img src="https://i.imgur.com/d9ETuAJ.jpg" style="width:100%" onclick="document.getElementById('fire').style.display='block'" alt="Fire-Alarm">
+  
+    
+	 <img src="https://i.imgur.com/RfZqsJMl.jpg" style="width:100%" onclick="document.getElementById('fire').style.display='block'" alt="Fire-Alarm">
 			<div  id="fire" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-light-green w3-center w3-wide" style="font-family:allerta;color:white;" >
@@ -234,19 +370,7 @@ for (i = 0; i < dropdown.length; i++) {
 			</div><!--end modal-->
 			
 			
-	<img src="https://i.imgur.com/exLYddu.jpg" style="width:100%" onclick="document.getElementById('temp').style.display='block'" alt="FAN">
-			<div  id="temp" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-top">
-					<header class="w3-container w3-cyan w3-center w3-wide" style="font-family:allerta;color:white;" >
-						<span onclick="document.getElementById('temp').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
-						<h2><strong style="color:white;">TEMP</strong></h2>
-					</header>
-					<div class="w3-container w3-center w3-cyan " style="font-family:Cursive">
-						<img src="https://i.imgur.com/34dclJy.png" style="width:30%"><br/>
-						<font face="Century Gothic" color="white"><h2 align="center">30 deg</h2></font>
-					</div><!--w3 container-->
-				</div><!--end modal content-->
-			</div><!--end modal-->
+	
 	
   </div>
 
@@ -267,7 +391,7 @@ for (i = 0; i < dropdown.length; i++) {
 				</div><!--end modal content-->
 			</div><!--end modal-->
     
-	<img src="https://i.imgur.com/RaeYx7k.jpg" style="width:100%" onclick="document.getElementById('people').style.display='block'" alt="Person Count">
+	<img src="https://i.imgur.com/08zNDq3l.jpg" style="width:100%" onclick="document.getElementById('people').style.display='block'" alt="Person Count">
 			<div  id="people" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-dark-gray w3-center w3-wide" style="font-family:allerta;color:white;" >
@@ -280,41 +404,7 @@ for (i = 0; i < dropdown.length; i++) {
 					</div><!--w3 container-->
 				</div><!--end modal content-->
 			</div><!--end modal-->
-	
-    <a href="fb.com/akki.khitk"><img src="https://i.imgur.com/5hOvBq1.png" style="width:100%"  alt="FB"></a>
-	
-  </div>
-  <div class="w3-quarter">
-	<img src="https://i.imgur.com/oBA7cfJ.jpg" style="width:100%" onclick="document.getElementById('fanl').style.display='block'" alt="Speed">
-			<div  id="fanl" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-top">
-					<header class="w3-container w3-cyan w3-center w3-wide" style="font-family:allerta;color:white;" >
-						<span onclick="document.getElementById('fanl').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
-						<h2><strong style="color:white;">Speed</strong></h2>
-					</header>
-					<div class="w3-container w3-center w3-cyan " style="font-family:Cursive">
-						<a href="#nogo"><img src="https://i.imgur.com/MRxGPO8.png" width="40%" align="center"></a> 					
-					</div><!--w3 container-->
-				</div><!--end modal content-->
-			</div><!--end modal-->
-			
-			
-    <img src="https://i.imgur.com/ilvbpZl.jpg" style="width:100%" onclick="document.getElementById('humid').style.display='block'" alt="Speed">
-			<div  id="humid" class="w3-modal">
-				<div class="w3-modal-content w3-card-4 w3-animate-top">
-					<header class="w3-container w3-red w3-center w3-wide" style="font-family:allerta;color:white;" >
-						<span onclick="document.getElementById('humid').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
-						<h2><strong style="color:white;">Humidity</strong></h2>
-					</header>
-					<div class="w3-container w3-center w3-red" style="font-family:Cursive">
-						<img src="https://i.imgur.com/sBaLlGJ.png" style="width:30%">
-						<font face="Century Gothic" color="white"><h1 align="center">60%</h1></font>
-						
-					</div><!--w3 container-->
-				</div><!--end modal content-->
-			</div><!--end modal-->
-			
-	<img src="https://i.imgur.com/HozgONJ.jpg" style="width:100%" onclick="document.getElementById('gallery').style.display='block'" alt="Speed">
+	<img src="https://i.imgur.com/HozgONJ.jpg" style="width:100%" onclick="document.getElementById('gallery').style.display='block'" alt="Gallery Lights">
 			<div  id="gallery" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-purple w3-center w3-wide" style="font-family:allerta;color:white;" >
@@ -332,6 +422,85 @@ for (i = 0; i < dropdown.length; i++) {
 					</div><!--w3 container-->
 				</div><!--end modal content-->
 			</div><!--end modal-->
+    
+	
+  </div>
+  <div class="w3-quarter">
+	<img src="https://i.imgur.com/wBlpbdbl.jpg" style="width:100%" onclick="document.getElementById('fanl').style.display='block'" alt="Speed">
+			<div  id="fanl" class="w3-modal">
+				<div class="w3-modal-content w3-card-4 w3-animate-top">
+					<header class="w3-container w3-cyan w3-center w3-wide" style="font-family:allerta;color:white;" >
+						<span onclick="document.getElementById('fanl').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
+						<h2><strong style="color:white;">Speed</strong></h2>
+					</header>
+					<div class="w3-container w3-center w3-cyan " style="font-family:Cursive">
+						<a href="#nogo"><img src="https://i.imgur.com/MRxGPO8.png" width="40%" align="center"></a> 					
+					</div><!--w3 container-->
+				</div><!--end modal content-->
+			</div><!--end modal-->
+			
+	<img src="https://i.imgur.com/Gee0bSLl.jpg" style="width:100%" onclick="document.getElementById('alarm').style.display='block'" alt="Alarm">
+			<div  id="alarm" class="w3-modal">
+				<div class="w3-modal-content w3-card-4 w3-animate-top">
+					<header class="w3-container w3-aqua w3-center w3-wide" style="font-family:allerta;color:white;" >
+						<span onclick="document.getElementById('alarm').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
+						<h2><strong style="color:blue;">Alarm</strong></h2>
+					</header>
+					<div class="w3-container w3-center w3-aqua " style="font-family:Cursive">
+						<form action="" method="">
+						<div id="jsalarmclock">
+
+							<div>
+							<div class="leftcolumn">Current Time:</div> 
+							<span id="alarm_alarm" style="letter-spacing: 2px"></span>
+							</div>
+							
+							<div>
+							<div class="leftcolumn">Set Alarm:</div> 
+							<span><select class="select_menu"></select> Hour</span> 
+							<span><select class="select_menu"></select> Minutes</span> 
+							<span><select class="select_menu"></select> Seconds</span>
+							</div>
+							
+							<div>
+							<div class="leftcolumn">Set Alarm Action:</div> 
+							<input type="text" class="text_menu" id="musicloc" size="55" value="https://www.youtube.com/watch?v=wU2BDZkv17k" /> 
+							</div>
+							
+							<input type="submit" class="button_menu" value="Set Alarm!" id="submit_submit" /> 
+							<input type="reset" class="button_menu " value="reset" id="reset_reset" /><br/>
+
+						</div>
+						</form>
+
+
+						<script type="text/javascript">
+						jsalarm.init()
+						</script>
+						
+					</div><!--w3 container-->
+				</div><!--end modal content-->
+			</div><!--end modal-->
+			
+			
+    <img src="https://i.imgur.com/jl8pHrll.jpg" style="width:100%" onclick="document.getElementById('humid').style.display='block'" alt="Humididty">
+			<div  id="humid" class="w3-modal">
+				<div class="w3-modal-content w3-card-4 w3-animate-top">
+					<header class="w3-container w3-red w3-center w3-wide" style="font-family:allerta;color:white;" >
+						<span onclick="document.getElementById('humid').style.display='none'" class="w3-btn w3-display-topright">&times;</span>
+						<h2><strong style="color:white;">Humidity</strong></h2>
+					</header>
+					<div class="w3-container w3-center w3-red" style="font-family:Cursive">
+						<img src="https://i.imgur.com/sBaLlGJ.png" style="width:30%">
+						<font face="Century Gothic" color="white"><h1 align="center">60%</h1></font>
+						
+					</div><!--w3 container-->
+				</div><!--end modal content-->
+			</div><!--end modal-->
+			
+		<a href="fb.com/akki.khitk"><img src="https://i.imgur.com/4qssSbsl.png" style="width:100%"  alt="FB"></a>
+			
+			
 	
   </div>
 </div>
