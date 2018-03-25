@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/C29ECEB7-3BE0-504F-B5FF-C0D202687630/main.js" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/78F5C1B1-2351-424E-A80D-7797A613AD6A/abn/main.css"/><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <style>
 body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 .w3-quarter img{margin-bottom: -6px; cursor: pointer}
@@ -93,7 +93,7 @@ var jsalarm={
 		var ct=this.padfield(dateobj.getHours())+":"+this.padfield(dateobj.getMinutes())+":"+this.padfield(dateobj.getSeconds())
 		this.ctref.innerHTML=ct
 		this.ctref.setAttribute("title", ct)
-		if (typeof this.hourwake!="undefined"){ //if alarm is set
+		if (typeof this.hourwake!="undefined"){ 
 			if (this.ctref.title==(this.hourwake+":"+this.minutewake+":"+this.secondwake)){
 				clearInterval(jsalarm.timer)
 				window.location=document.getElementById("musicloc").value
@@ -124,7 +124,7 @@ var jsalarm={
 		this.minuteselect=selections[1]
 		this.secondselect=selections[2]
 		for (var i=0; i<60; i++){
-			if (i<24) //If still within range of hours field: 0-23
+			if (i<24) 
 			this.hourselect[i]=new Option(this.padfield(i), this.padfield(i), false, dateobj.getHours()==i)
 			this.minuteselect[i]=new Option(this.padfield(i), this.padfield(i), false, dateobj.getMinutes()==i)
 			this.secondselect[i]=new Option(this.padfield(i), this.padfield(i), false, dateobj.getSeconds()==i)
@@ -180,24 +180,40 @@ var jsalarm={
 			<img src="https://i.imgur.com/2QhdOtk.jpg" width="100%";>
 		</div>
   </div>
+  <button class="w3-bar-item w3-button w3-center w3-padding-32">DEVELOPER
+  </button>
+  <div class="dropdown-container">
+    <button class="w3-bar-item w3-button w3-center w3-padding-32">Akshit Sharma
+		</button>
+		<div class="dropdown-container">
+			<img src="https://i.imgur.com/Dp0RZHF.jpg" width="100%"; >
+		</div>
+  </div>
   <button class="w3-bar-item w3-button w3-center w3-padding-32">ABOUT
   </button>
   <div class="dropdown-container">
-    <p>Made with love for the circuits presenting you a home automation project</p>
+    <p>The Project was built using Arduino and ESP microcontrollers to facilitate the need of the hour-Home Automation through Smartphones Website,Google Assistant & Messenger. </p>
   </div>
   <button class="w3-bar-item w3-button w3-center w3-padding-32">APPLICATIONS
   </button>
   <div class="dropdown-container">
-    <p>Water Level Indicator</p>
-	<p>	Fire Alarm</p>
-	<p>Automatic Gate Control</p>
+    <p>Person Count</p>
+	<p>Water Level Indicator</p>
+	<p>Fire Alarm</p>
+	<p>Automated Fan Regulation</p>
+	<p>Automatic Door Opening </p>
+	<p>Realtime Temperature Monitoring</p>
+	<p>Energy Efficient Lighting</p>
+	<p>Humidity Monitoring System</p>
+	<p>Centralised Alarm System</p>
+	<p>Intensity Varying Lighting</p>
   </div>
   <button class="w3-bar-item w3-button w3-center w3-padding-32">CONTACT
   </button>
   <div class="dropdown-container">
-    <p>9455396226</p>
-	<p>piyuskgupta1997@gmail.com</p>
-	<p>https://fb.com/khitk</p>
+    <p>9519445876</p>
+	<p>khitkwizard@gmail.com</p>
+	<p>https://www.facebook.com/Home_esp-137734820384279/inbox/?selected_item_id=100007944130317</p>
   </div>
 </nav>
 <script>
@@ -255,7 +271,7 @@ for (i = 0; i < dropdown.length; i++) {
 				</div><!--end modal content-->
 			</div><!--end modal-->
     
-	<img src="https://i.imgur.com/fMa0e9V.png" style="width:100%" onclick="document.getElementById('ldr').style.display='block'" alt="Water Levels">
+	<img src="https://i.imgur.com/fMa0e9V.png" style="width:100%" onclick="document.getElementById('ldr').style.display='block'" alt="Light Levels">
 			<div  id="ldr" class="w3-modal">
 				<div class="w3-modal-content w3-card-4 w3-animate-top">
 					<header class="w3-container w3-orange w3-center w3-wide" style="font-family:allerta;" >
@@ -498,30 +514,20 @@ for (i = 0; i < dropdown.length; i++) {
 				</div><!--end modal content-->
 			</div><!--end modal-->
 			
-		<a href="fb.com/akki.khitk"><img src="https://i.imgur.com/4qssSbsl.png" style="width:100%"  alt="FB"></a>
+		<a href="https://www.facebook.com/Home_esp-137734820384279/inbox/?selected_item_id=100007944130317"><img src="https://i.imgur.com/4qssSbsl.png" style="width:100%"  alt="FB"></a>
 			
 			
 	
   </div>
 </div>
 
- 
-  <!-- Modal for full size images on click-->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">X</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-      <img id="img01" class="w3-image">
-      <p id="caption"></p>
-    </div>
-  </div>
-
-  <div class="w3-black w3-center w3-padding-24">Created By <a href="https://github.com/khitk9738" title="Circuit Magicians" target="_blank" class="w3-hover-opacity">Circuit Magicians</a></div>
+  <div class="w3-black w3-center w3-padding-24">Created By <a href="https://khitk9738.github.io" title="Circuit Magicians" target="_blank" class="w3-hover-opacity">Khitk9738</a></div>
 
 <!-- End page content -->
 </div>
 
 <script>
-// Script to open and close sidebar
+
 function w3_open() {
     document.getElementById("sidenav").style.display = "block";
     document.getElementById("myOverlay").style.display = "block";
