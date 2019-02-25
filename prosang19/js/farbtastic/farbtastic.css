@@ -1,0 +1,82 @@
+/**
+ * Farbtastic Color Picker 1.2
+ * Â© 2008 Steven Wittens
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+.farbtastic {
+  position: relative;
+}
+.farbtastic * {
+  position: absolute;
+  z-index: 0;
+}
+.farbtastic, .farbtastic .wheel {
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .color, .farbtastic .overlay {
+  top: 47px;
+  left: 47px;
+  width: 101px;
+  height: 101px;
+}
+.farbtastic .wheel {
+  background: url(wheel.png) no-repeat;
+  width: 195px;
+  height: 195px;
+}
+.farbtastic .overlay {
+  background: url(mask.png) no-repeat;
+}
+.farbtastic .marker {
+  width: 17px;
+  height: 17px;
+  margin: -8px 0 0 -8px;
+  overflow: hidden;
+  background: url(marker.png) no-repeat;
+}
+
+
+/*Custom*/
+nav#colorpicker{ padding: 30px; position: fixed; top:0; left: 0; background: #FFFFFF; width: 250px; margin-top: 60px; z-index: 100000; border:1px solid #ededed;
+  transition:all 0.5s;
+  -webkit-transition:all 0.5s;
+  -ms-transition:all 0.5s;}
+nav#colorpicker.cpclose{ left:-260px;}
+nav#colorpicker .fa-times{ z-index: 10; position:absolute; right:10px; top: 5px;  cursor: pointer; display: inline-block;}
+nav#colorpicker .fa-times:before, nav#colorpicker .fa-gears:before{color:#b1b1b1;}
+nav#colorpicker .fa-times:hover:before,nav#colorpicker .fa-gears:hover:before{color:#8f8f8f;}
+nav#colorpicker .fa-gears{ opacity: 0; z-index: 10; position:absolute; right:-55px; top:180px; cursor: pointer; display: inline-block; background: #FFFFFF; width: 35px; text-align: center; padding: 8px; border:1px solid #ededed;
+  transition:all 0s;
+  -webkit-transition:all 0s;
+  -ms-transition:all 0s;}
+nav#colorpicker.cpclose .fa-gears{ opacity: 1;
+  transition:all 0.5s 0.5s;
+  -webkit-transition:all 0.5s 0.5s;
+  -ms-transition:all 0.5s 0.5s;
+}
+nav#colorpicker .colortint{ cursor: pointer; width: 20px; height: 20px; display: inline-block; transition:all 0.5s; -webkit-transition:all 0.5s;}
+nav#colorpicker .colortint.selected, nav#colorpicker .colortint:hover{
+
+	transform:rotateZ(45deg) scale(0.7,0.7); -webkit-transform:rotateZ(45deg) scale(0.7,0.7);
+
+}
+nav#colorpicker input#color{ text-align: center; text-shadow: 0 0 2px rgba(255,255,255,0.2); padding: 8px 5px; border: 0; margin:0;}
+
+nav#colorpicker #colorSchemes{ margin-bottom: 40px}
+nav#colorpicker #picker{ margin-bottom: 15px}
+nav#colorpicker .cplabel{ margin-bottom: 10px; font-size: 14px; color: #8f8f8f; }
+nav#colorpicker .cplabel.mini{ font-size: 12px}
