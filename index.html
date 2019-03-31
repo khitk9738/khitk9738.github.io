@@ -1,555 +1,214 @@
+<!doctype html>
 <html lang="en">
 <head>
-	<title>AKSHIT SHARMA</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="keywords" content="Designer & Developer of Websites,Web Designing,Android Development,khitk9738,khitkwizard,akshitwizard,akshit,akshit sharma,image processing,fabchat,chat app,music player,attendance manager,social network,eye vison,eyevis,python" />
-	<script type="application/x-javascript">
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<!-- Custom Theme files -->
-	<link href="css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
-	<!--gallery -->
-	<link type="text/css" rel="stylesheet" href="css/cm-overlay.css" />
-	<!-- //gallery -->
-	<link href="css/style.css" type="text/css" rel="stylesheet" media="all">
-	<link href="css/font-awesome.css" rel="stylesheet">
-	<!-- font-awesome icons -->
-	<!--//Custom Theme files-->
-	<!-- js -->
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<!-- //js -->
-	<!-- web-fonts -->
-	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
-	<link href="//fonts.googleapis.com/css?family=Arsenal:400,400i,700,700i" rel="stylesheet">
-	<!-- //web-fonts -->
+    <title>New Tab</title>
+    <link rel="icon" type="image/png" href="tap.png"/>
+
+    <link rel="stylesheet"  type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/W3.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <script src="js/jquery.min.js"></script>
+    <script src='js/nlp_compromise.min.js'></script>
+    <script type="text/javascript" src="js/xml2json.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="js/offline.min.js"></script>
 </head>
 
-<body>
-	<!-- banner -->
-	<div id="home" class="banner">
-		<div class="banner-agileinfo">
-			<!-- header -->
-			<div class="header">
-				<div class="container">
-					<div class="menu">
-						<a href="" id="menuToggle"> <span class="navClosed"></span> </a>
-						<nav>
-							<a href="#home" class="active scroll">Home</a>
-							<a href="#about" class="scroll">About Me</a>
-							<a href="#skills" class="scroll">Skills</a>
-							<a href="#gallery" class="scroll">My Work</a>
-							<a href="#services" class="scroll">Services</a>
-							<a href="#contact" class="scroll">Contact</a>
-						</nav>
-						<script>
-							(function ($) {
-								// Menu Functions
-								$(document).ready(function () {
-									$('#menuToggle').click(function (e) {
-										var $parent = $(this).parent('.menu');
-										$parent.toggleClass("open");
-										var navState = $parent.hasClass('open') ? "hide" : "show";
-										$(this).attr("title", navState + " navigation");
-										// Set the timeout to the animation length in the CSS.
-										setTimeout(function () {
-											console.log("timeout set");
-											$('#menuToggle > span').toggleClass("navClosed").toggleClass("navOpen");
-										}, 200);
-										e.preventDefault();
-									});
-								});
-							})(jQuery);
-						</script>
+<body id='body' class="overlay" oncontextmenu="return false;">
 
+<div class="w3-container" >
+      
+    <div class="w3-bar w3-margin-top">
+
+		<button id="menu" class="w3-bar-item  w3-btn w3-right w3-margin-right navbtn" ><i id="menu" class="fa fa-bars"></i></button>
+		 <button id="recent" class="w3-bar-item  w3-btn w3-right w3-margin-right navbtn mini" >Top Visits</button>
+		<button id="bookmark" class="w3-bar-item  w3-btn w3-right w3-margin-right navbtn mini" style="">Bookmarks</button>
+		
+		<button id="chromeitbar" class="w3-bar-item w3-left w3-btn mini" title="Rate Us"  style="margin-left:auto;margin-right:auto;display:block;margin-top:auto;margin-bottom:auto" >Amadeus : Browsing Redefined</button>
+    
+	</div>
+	
+	<div class="container abs center overlay" id="containment" style="margin-top: 0%;">
+		<div class="row">
+			<div class="col-md-12 datetime-container">
+				<h2 id="time"></h2>
+				<h5 id="date"></h5>
+			</div>
+			<!--<div class="col-md-12">
+				<div class="chromeit-container">
+					<select name="searchengine" id="searchengine" class="search-engine">
+						<option selected="selected" >Google</option>
+						<option>Bing</option>
+						<option>Wikipedia</option>
+					</select>
+					<div>
+					<input class="search-box autocomplete" title="search" name="chat" id="chatbox"
+						   oncontextmenu="return true;">
+					<!--<a href="#" class="mic" title="Search by voice" id="rec"></a>-->
+					<!--<span class="mic" id="rec">Speak</span>
 					</div>
-					<div class="clearfix"> </div>
 				</div>
-			</div>
-			<!-- //header -->
-			<div class="banner-text">
+			</div>-->
+			<div class="col-md-12 col-md-offset-2">
 				<div class="container">
-					<h2 class="w3ls-bnrtext">Akshit</h2>
-					<h2 class="w3ls-bnrtext"> <span> Developer </span>& <span>Designer</span></h2>
-					<p class="w3ls-p">an interactive web ,ML & android developer with the passion for creativity</p>
-					<a href="#about" class="buy btn-wayra scroll">Explore my work</a>
-					<p class="w3ls-bnrtext" ><span><a style="color:white;" href="https://github.com/khitk9738">@Github</a></span></p>
+					<select name="searchengine" id="searchengine"
+							style="text-align: center;height: 50px; width: 8%;font-family: 'Courgette', cursive;border-radius:30px; ">
+						<option selected="selected">Google</option>
+						<option>Bing</option>
+						<option>Wikipedia</option>
+					</select>
+					
+						<input style="width: 50%; height: 50px; border-radius:30px;font-family: 'Courgette', cursive;"
+							   type="text" class="autocomplete" name="chat" id="chatbox" placeholder="  Hi there! Type here to Search."
+							   oncontextmenu="return true;">
+								<span class="mic" id="rec" style="width: 7%; height: 50px;font-family: 'Courgette', cursive;">Speak</span>
+					<!--
+					<button style="width: 7%; height: 55px;font-family: 'Courgette', cursive;" id="rec">Speak</button>-->
 				</div>
 			</div>
-		</div>
-	</div>
-	<!-- //banner -->
-	<!-- about -->
-	<div class="agile-about w3ls-section text-center" id="about">
-		<div class="container">
-			<h3 class="agileits-title">about me</h3>
-			<div class="agileits-about-grid">
-				<p>Student at MNNIT Allahabad,loves development and always looking for something fresh & new.</p>
-				<p>No Place Like 127.0.0.1 </p> 
-			</div>
-			<a href="#contact" class="wthree- about-link scroll">Contact me</a>
-		</div>
-	</div>
-	<!-- //about -->
-	<!-- about-bottom -->
-	<div class="agileits-about-btm">
-		<div class="container">
-			<div class="w3-flex">
-			<div class="col-md-4 col-sm-4 col-xs-12 ab1 agileits-about-grid1">
-				<span class="fa fa-trophy" aria-hidden="true"></span>
-				<h4 class="agileinfo-head">Hobbies</h4>
-				<h5>Blogging</h5>
-				<p>akshitwizard.blogspot.com</p>
-				<h5>Delving into the solutions for real life problems</h5>
-				<p>Loves to work & have a zeal and passion for solving real problems</p>
-				<h5>Dancing and choreography</h5>
-				<p>participated,prepared ,organized ,mangaged & conducted many dance competions</p>
-			</div>
-			<div class="col-md-4 col-sm-4 ab1 agileits-about-grid2">
-				<span class="fa fa-graduation-cap  wthree-title-list" aria-hidden="true"></span>
-				<h4 class="agileinfo-head">education</h4>
-				<h5>Graduation</h5>
-				<p>B.Tech - MNNIT Allahabad (2015-present)</p>
-				<p>8.33 CPI</p>
-				<h5>XII (CBSE)</h5>
-				<p>K.V. Punjab Lines , Meerut Cantt, U.P. (2014-15)</p>
-				<p>94.60 %</p>
-				<h5>X (CBSE)</h5>
-				<p>K.V. Punjab Lines , Meerut Cantt, U.P. (2012-13)</p>
-				<p>10.0 CPI</p>
-			</div>
-			<div class="col-md-4 col-sm-4 ab1 agileits-about-grid3">
-				<span class="fa fa-shield  wthree-title-list" aria-hidden="true"></span>
-				<h4 class="agileinfo-head">Areas Of Interest</h4>
-				<h5>Web Development (Front & Back-end)</h5>
-				<p>Databases,JSON,Php,XML,HTML</p>
-				<h5>Android App Development</h5>
-				<p>JAVA,XML,Databases,JSON,Firebase,GCM</p>
-				<h5>Image Procesing</h5>
-				<p>Tensorflow,CNN,CV</p>
-			</div>
-			<div class="clearfix"></div>
-			</div>
-		</div>
-	</div>
-	<!-- //about-bottom -->
-	<!-- skills -->
-	<div class="agile-service w3ls-section" id="skills">
-		<div class="container">
-			<div class="col-md-5 w3_agileits-service-left">
-				<h3 class="agileits-title">skills</h3>
-				<p>Programming Languages: C , C++ & JAVA Core (Basic),HTML , XML , CSS , PHP,Android Studio(IDE),Image Processing,Python</p>
-			</div>
-			<div class="col-md-7 skills-right">
-				<div class="vertical-skills  pull-right xs-center">
-					<ul class="list-inline">
-						<li>
-							<div class="skill" style="height:100%; background:#ff9d0d;"><span class="value">100%</span></div><span class="title">HTML</span></li>
-						<li>
-							<div class="skill" style="height:90%; background:#b32eca;"><span class="value">90%</span></div><span class="title">PHP</span></li>
-						<li>
-							<div class="skill" style="height:90%; background:#009688;"><span class="value">90%</span></div><span class="title">Database</span></li>
-						<li>
-							<div class="skill" style="height:75%; background:#6361f0;"><span class="value">75%</span></div><span class="title">Image</span></li>
-						<li>
-							<div class="skill" style="height:80%; background:#6361f0;"><span class="value">80%</span></div><span class="title">Android</span></li>
-						
-						
-
-					</ul>
+			<div class="col-md-12 recent-container w3-container">
+				<div class="row">
+					<div class="col-md-3 col-md-offset-2">
+						<a class="draggable mini" id="draggable1" href="http://google.com" title="Google"><img id="draggable1img" src="images/google.png" style=""></a>
+					</div>	
+					<div class="col-md-3">		
+						<a class="draggable mini" id="draggable2" href="http://wikipedia.com" title="Wikipedia"><img src="images/wikipedia.png" ></a>
+					</div>			
+					<div class="col-md-2">		
+						<a class="draggable mini" id="draggable4" href="http://facebook.com" title="Facebook"><img src="images/facebook.png" ></a>
+					</div>		
+				</div>
+			</div> 
+			<div class="col-md-12 recent-container">
+				<div class="row">
+					<div class="col-md-3 col-md-offset-2">
+						<a class="draggable mini" id="draggable5" href="http://cricbuzz.com" title="Cricbuzz"><img src="images/crickbuzz.png" ></a>
+					</div>	
+					<div class="col-md-3">		
+						 <a class="draggable mini" id="draggable6" href="http://youtube.com"  title="Youtube"><img src="images/youtube.png"></a>
+					</div>			
+					<div class="col-md-2">		
+						<a class="draggable mini" id="draggable9" href="http://gmail.com"  title="Gmail"><img src="images/gmail.ico" ></a>
+					</div>		
 				</div>
 				
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-	<div class="w3ls-section agileits-gallery" id="gallery">
-		<div class="container">
-			<h3 class="agileits-title">MY work</h3>
-			<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
-				<ul id="myTab" class="nav nav-tabs" role="tablist">
-					<li role="presentation" class="active"><a href="#home-main" id="home-tab" role="tab" data-toggle="tab" aria-controls="home-main" aria-expanded="true">Show all</a></li>
-					<li role="presentation"><a href="#learning" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">Web </a></li>
-					<li role="presentation"><a href="#playing" role="tab" id="playing-tab" data-toggle="tab" aria-controls="playing">Android</a></li>
-					<li role="presentation"><a href="#painting" role="tab" id="painting-tab" data-toggle="tab" aria-controls="painting">Image Processing</a></li>
-				</ul>
-				<div id="myTabContent" class="tab-content">
-					<div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">
-						<div class="w3_tab_img">
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g1.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g1.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Smart-Scene-Recognition-">Scene Recognition</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g2.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/CollegeNetwork">CollegeBuddy</h5>
-									<p>  </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g3.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/EyeVis">EyeVis</h5>
-									<p></p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g4.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/FabChat">FabChat</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g5.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g5.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/FilmyKeeda">FilmyKeeda</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g6.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g6.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Khitk_MuSic_HatK">Khitk-Music</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g7.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g7.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Jarvis">Jarvis</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g8.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g8.jpg" alt=" " class="img-responsive" />
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Attendance Manager">Attendance Manager</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="learning" aria-labelledby="learning-tab">
-						<div class="w3_tab_img">
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g2.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/CollegeNetwork">CollegeBuddy</h5>
-									<p></p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g7.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g7.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Jarvis">Jarvis</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="playing" aria-labelledby="playing-tab">
-						<div class="w3_tab_img">
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g4.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/FabChat">FabChat</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g5.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g5.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/FilmyKeeda">Filmykeeda</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g6.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g6.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Khitk_MuSic_HatK">Khitk-Music</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g8.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g8.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Attendance Manager">Attendance Manager</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="painting" aria-labelledby="painting-tab">
-						<div class="w3_tab_img">
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g1.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g1.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/Smart-Scene-Recognition-">Scene Recognition</h5>
-									<p>  </p>
-								</div>
-							</div>
-							<div class="col-sm-3 w3_tab_img_left">
-								<div class="demo">
-									<a class="cm-overlay" href="images/g3.jpg">
-										<figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive">
-										</figure>
-									</a>
-								</div>
-								<div class="agile-gallery-info">
-									<h5><a href="https://github.com/khitk9738/EyeVis">EyeVis</h5>
-									<p> </p>
-								</div>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script src="js/jquery.tools.min.js"></script>
-		<script src="js/jquery.mobile.custom.min.js"></script>
-		<script src="js/jquery.cm-overlay.js"></script>
-		<script>
-			$(document).ready(function () {
-				$('.cm-overlay').cmOverlay();
-			});
-		</script>
-	</div>
-	<!-- //menu -->
-	<!-- services -->
-	<div class="w3ls-section services" id="services">
-		<div class="container">
-			<h3 class="agileits-title text-center">Interests</h3>
-			<div class="services-w3ls-row agileits-w3layouts service1 text-center">
-				<h5>Web Development</h5>
-				<p>CollegeBuddy,Jarvis,ProfilePage</p>
-				<div class="s-top">
-					<span class="fa fa-laptop" aria-hidden="true"></span>
-				</div>
-			</div>
-			<div class="services-w3ls-row agileits-w3layouts middlegrid-w3ls">
-				<div class="col-md-4 services-grid agileits-w3layouts service2">
-					<div class="col-md-10 w3ls-sub-text">
-						<h5>Databases</h5>
-						<p>FabChat,CollegeBuddy,EyeVis</p>
-					</div>
-					<div class="col-md-2 sub-icon">
-						<span class="fa fa-caret-square-o-up" aria-hidden="true"></span>
-					</div>
-				</div>
-				<div class="col-md-4 services-grid img-agileits">
-					<img src="images/services.jpg" class="img-responsive" alt="" />
-				</div>
-				<div class="col-md-4 services-grid agileits-w3layouts service3">
-					<div class="col-md-2 sub-icon">
-						<span class="fa fa-grav" aria-hidden="true"></span>
-					</div>
-					<div class="col-md-10 w3ls-sub-text">
-						<h5>Android Development</h5>
-						<p>EyeVis,FabChat,FilmyKeeda,Attendance Manger,Music Player</p>																	
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="services-w3ls-row agileits-w3layouts service4">
-				<div class="s-top">
-					<span class="fa fa-adjust" aria-hidden="true"></span>
-				</div>
-				<h5>Image Processing</h5>
-				<p>Scene Recognition,EyeVis,Tensorflow</p>
+			   
+				
 			</div>
 		</div>
 	</div>
-	<!-- //services -->
-	<!-- contact -->
-	<div class="contact-w3-agileits w3ls-section" id="contact">
-		<div class="container">
-			<h3 class="agileits-title cont-w3l">Feel free to contact me</h3>
-			<div class="contact-main-w3ls">
-				<div class="col-md-6  contact-left-w3ls">
-					<div class="mail contact-grid-agileinfo">
-						<div class="col-md-4 col-sm-4 col-xs-4 contact-icon-wthree">
-							<h4>Mail me</h4>
-						</div>
-						<div class="col-md-8  col-sm-8 col-xs-8 contact-text-agileinfo">
-							<a href="mailto:khitkwizard@gmail.com">khitkwizard@gmail.com</a><br>
-							<a href="mailto:akshitsharma2811@gmail.com">akshitsharma2811@gmail.com</a>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="call contact-grid-agileinfo">
-						<div class="col-md-4 col-sm-4 col-xs-4 contact-icon-wthree">
-							<h4>Phone</h4>
-						</div>
-						<div class="col-md-8 col-sm-8 col-xs-8 contact-text-agileinfo">
-							<p>+919519445867</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="contact-grid-agileinfo">
-						<div class="col-md-4 col-sm-4 col-xs-4 contact-icon-wthree">
-							<h4>Address</h4>
-						</div>
-						<div class="col-md-8 col-sm-8 col-xs-8 contact-text-agileinfo">
-							<p>B-39/2 Gangadham Ganganagar<br> Meerut,UP-250001<br> India.
-							</p>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-					<div class="visit wthree-social-icons contact-grid-agileinfo">
-						<div class="col-md-4 col-sm-4 col-xs-4 contact-icon-wthree">
-							<h4>Follow me</h4>
-						</div>
-						<div class="col-md-8 col-sm-8 col-xs-8 contact-text-agileinfo">
-							<ul class="w3-links">
-								<li><a href="facebook.com/akshit.khitK"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="twitter.com/khitkwizard"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="linkedin.com/in/akshit-sharma-948a92134"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="plus.google.com/u/0/+AkshitSharma_khitk"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-						<div class="clearfix"></div>
-					</div>
-				</div>
-				<div class="contact-main">
-					<div class="col-md-6 agileits-main-right">
-						
-					</div>
-					<div class="clearfix"></div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- //contact -->
-	<div class="agileits_w3layouts-footer">
-		<p>© 2018 Akshit Sharma --- <a href="github.com/khitk9738"> khitk9738</a></p>
-	</div>
-	<!-- start-smooth-scrolling -->
-	<script type="text/javascript" src="js/move-top.js"></script>
-	<script type="text/javascript" src="js/easing.js"></script>
-	<script type="text/javascript">
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
+<!--<body id='body' oncontextmenu="return false;">
+<div class="abs center overlay" id="containment">
+    <h2 id="time">10:06:00</h2>
+    <h5 id="date">2017-08-23</h5>
+    <select name="searchengine" id="searchengine"
+            style="text-align: center;height: 55px; width: 7%;font-family: 'Courgette', cursive; ">
+        <option selected="selected">Google</option>
+        <option>Bing</option>
+        <option>Wikipedia</option>
+    </select>
+    <input style="width: 40%; height: 50px; border: 1px solid black; margin: 10px;font-family: 'Courgette', cursive;"
+           type="text" class="autocomplete" name="chat" id="chatbox" placeholder="Hi there! Type here to Search."
+           oncontextmenu="return true;">
+    <button style="width: 7%; height: 55px;font-family: 'Courgette', cursive;" id="rec">Speak</button>
+    <br>
 
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-	</script>
-	<!-- //end-smooth-scrolling -->
-	<!-- smooth-scrolling-of-move-up -->
-	<script type="text/javascript">
-		$(document).ready(function () {
-			/*
-			var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-			};
-			*/
 
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
+    <a class="draggable" id="draggable1" href="http://google.com" style="padding-left: 15%" title="Google"><img
+            id="draggable1img" src="images/google.png" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable2" href="http://wikipedia.com" style="padding-left: 5%" title="Wikipedia"><img
+            src="images/wikipedia.png" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable3" href="http://saavan.com" style="padding-left: 5%" title="Savaan"><img
+            src="images/saavan.png" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable4" href="http://facebook.com" style="padding-left: 5%" title="Facebook"><img
+            src="images/facebook.png" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable5" href="http://cricbuzz.com" style="padding-left: 5%" title="Cricbuzz"><img
+            src="images/crickbuzz.png" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable6" href="http://youtube.com" style="padding-left: 5%" title="Youtube"><img
+            src="images/youtube.ico" style="width:100px;height:100px;"></a>
+    <br/>
+    <a class="draggable" id="draggable7" href="http://amazon.com" style="padding-left: 33%" title="Amazon"><img
+            src="images/amazon.ico" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable8" href="http://flipkart.com" style="padding-left: 5%" title="Flipkart"><img
+            src="images/flipkart.png" style="width:100px;height:100px;"></a>
+    <a class="draggable" id="draggable9" href="http://gmail.com" style="padding-left: 5%" title="Gmail"><img
+            src="images/twitter.ico" style="width:100px;height:100px;"></a>
+</div>
+-->
+<div class="upload-btn-wrapper mini"
+     style="position: absolute; bottom:0; right: 0; padding-bottom: 1%; padding-right: .5%; cursor:pointer;">
+    <button class="btn" style="cursor:pointer" >Change Background</button>
+    <input type="file" id="file" name="file" accept="images/*" style="cursor:pointer"/>
+</div>
 
-		});
-	</script>
-<script type="text/javascript" src="js/SmoothScroll.min.js"></script>
-	<!-- Bootstrap core JavaScript
-    ================================================== -->
-	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="js/bootstrap.js"></script>
+<div class="mini" style="position: absolute; color:white; bottom:0;padding-bottom: 4%; padding-right: .5%;line-height: 0px">
+    <span class="w3-left"  id="desc"></span>
+    <h2 class="w3-center"  id="temp"></h2>
+    <span class="w3-left"  id="city"></span>
+</div>
+<center>
+
+<div id = "quotes" class="mini">
+    <p id="quotesp"></p>
+        <cite id="quotesc" style="text-align: right;"></cite>
+</div>
+
+</center>
+
+		<div id="id01" class="w3-card-8 w3-right w3-margin-right " style="width:22%; height: 20%; display: none;">
+			 <div class="w3-container  w3-ripple w3-text-white overlay"style="height:38px;"">
+				<!--<button id="closebtn" class=" w3-button w3-right">&times;</button>-->
+				<center>
+				<h4 style="color:#ff5722;font-weight: bold;font-style: italic;">Your BookMarks</h4>
+				</center>
+			</div>
+				<ul id ="bookmark-list" class="w3-text-white w3-hoverable w3-small w3-ul abs overlay" style="overflow-x:hidden;overflow-y: scroll;list-style: none; width: 21.5%;">
+				 </ul>
+					
+		</div>
+    
+
+		<div id="id02" class="w3-card-2 w3-right w3-margin-right  " style="width:20%; height: 80%; display: none;">
+
+		  <div class="w3-container w3-ripple w3-text-white overlay"style="height:38px;">
+				<!--<button id="closebtn2" class=" w3-button w3-right">&times;</button>-->
+				<center>
+				<button id="clearAll" class="w3-btn w3-hover-black w3-right">X</button>
+				<h4 style="color:#ff5722;font-weight: bold;font-style: italic;">Top Visit List</h4>
+				</center>
+
+			</div>
+				<ul id ="recent-list" class=" w3-text-white w3-hoverable w3-small w3-ul abs overlay" style="list-style: none; width: 20%;">
+				 </ul>
+				 
+		  </div>
+  
+
+
+		  <div id="id03" class="w3-card-2 w3-right w3-margin-right " style="width:20%; height: 40%; display: none;">
+				  
+				 <div class="w3-container  abs overlay" style="width: 20%;height: 40%;">
+					<!--<button id="closebtn3" class=" w3-button w3-right">&times;</button>-->
+					<span style="color:white;font-family: 'Courgette', cursive; font-weight: 500;" > Random Images</span> <button id="randimg" class="w3-tag w3-tiny w3-ripple w3-round-large w3-btn w3-deep-orange w3-right" style="width: 18%;height: 15% ">OFF</button>
+					<hr/>
+					<span style="color:white;font-family: 'Courgette', cursive; font-weight: 500;" > Minimal Mode</span> <button id="minimode" class="w3-tag w3-tiny w3-ripple w3-round-large w3-btn w3-deep-orange w3-right" style="width: 18%;height: 15% "></button>
+					<hr/>
+					<span style="color:white;font-family: 'Courgette', cursive; font-weight: 500;" >&#8457;</span> <button id="defar" class="w3-tag w3-tiny w3-ripple w3-round-large w3-btn w3-deep-orange w3-right" style="width: 18%;height: 15% "></button>
+					<hr/>
+					<button id="setwall" class="w3-tag w3-tiny w3-ripple w3-round-large w3-deep-orange w3-btn" style="width: 80%;height: 15% ">Set This image As permanent Wall</button>
+				 </div>
+		  </div>
+</div>
+<link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="js/index.js"></script>
 </body>
 </html>
