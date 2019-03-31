@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="face-api.js"></script>
+  <script src="js/commons.js"></script>
+  <script src="js/drawing.js"></script>
+  <script src="js/faceDetectionControls.js"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="W3.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <div id="navbar"></div>
+  <div class="center-content page-container">
+	<center>
+    <div class="progress" id="loader">
+      <div class="indeterminate"></div>
+    </div>
+    <div style="position: relative" class="margin">
+      <video onplay="onPlay(this)" id="inputVideo" autoplay muted></video>
+      <canvas  id="overlay" />
+    </div>
+	<!--<button type="button" id="mood" onclick="mood_print()">Get Mood</button>-->
+	<div class="button w3-btn w3-ripple  w3-block w3-deep-orange" style="width: 60%;border-radius:35px;" id="mood" onclick="mood_print()">Get Mood</div><hr/>
+	<span id="demo"></span><hr/>
+	<!--<button type="button" id="spotify_button" onclick="open_screen()" >Music On!!!</button>-->
+	<div class="w3-btn w3-ripple  w3-block w3-deep-orange" style="width: 60%;border-radius:35px;"  id="spotify_button" onclick="open_screen()">Music ON !!!</div><hr/><br><br>
+	</center>
+	</div>
+  </body>
+
+  <script>
+    document.getElementById("navbar").style.display = "none";
+	//document.getElementById("spotify_button").style.display = "none";
+	let forwardTimes = []
+    let withBoxes = true
+	var max;
+	var x;
+
+    function onChangeHideBoundingBoxes(e) {
+      withBoxes = !$(e.target).prop('checked')
+    }
+
+    function updateTimeStats(timeInMs) {
+      forwardTimes = [timeInMs].concat(forwardTimes).slice(0, 30)
+      const avgTimeInMs = forwardTimes.reduce((total, t) => total + t) / forwardTimes.length
+      $('#time').val(`${Math.round(avgTimeInMs)} ms`)
+      $('#fps').val(`${faceapi.round(1000 / avgTimeInMs)}`)
+    }
+
+    async function onPlay() {
+      const videoEl = $('#inputVideo').get(0)
+
+      if(videoEl.paused || videoEl.ended || !isFaceDetectionModelLoaded())
+        return setTimeout(() => onPlay())
+
+
+      const options = getFaceDetectorOptions()
+
+      const ts = Date.now()
+
+      const result = await faceapi.detectSingleFace(videoEl, options).withFaceExpressions()
+
+      updateTimeStats(Date.now() - ts)
+
+      if (result) {
+        drawExpressions(videoEl, $('#overlay').get(0), [result], withBoxes)
+		//console.log("HEy");
+		//console.log(JSON.stringify(result.expressions));
+		//console.log(result.expressions.length);
+	    
+		for (var i=0 ; i<result.expressions.length ; i++) 
+		   {
+				//console.log(result.expressions[i].probability)
+				if (!max || parseFloat(result.expressions[i].probability) > parseFloat(max.probability))
+					max = result.expressions[i];
+		   }
+		   
+		}
+		if (max)
+			console.log(max.expression);
+		
+		
+      setTimeout(() => onPlay())
+    }
+
+	function mood_print() {
+		$("#spotify_button").show();
+		if (max)
+		{
+		x = JSON.stringify(max.expression);
+		document.getElementById("demo").innerHTML = x;
+		}	
+	}
+	
+	function open_screen(){
+	console.log("ads");
+		if(x=="\"happy\""){
+			var e=(window.screen.availHeight-200)/2,n=(window.screen.availWidth-650)/2;window.open("https://open.spotify.com/playlist/37i9dQZF1DXdPec7aLTmlC","spotify","width=850,height=700,top="+e+",left="+n)
+			}
+		else if(x=="\"sad\""){
+			var e=(window.screen.availHeight-200)/2,n=(window.screen.availWidth-650)/2;window.open("https://open.spotify.com/playlist/4Sdc0wQI8JxWeUOgKizMg0","spotify","width=850,height=700,top="+e+",left="+n)
+		}
+		else{
+			var e=(window.screen.availHeight-200)/2,n=(window.screen.availWidth-650)/2;window.open("https://open.spotify.com/browse/featured","spotify","width=850,height=700,top="+e+",left="+n)
+		}
+	}
+	
+    async function run() {
+      // load face detection and face expression recognition models
+      await changeFaceDetector(TINY_FACE_DETECTOR)
+      await faceapi.loadFaceExpressionModel('/')
+      changeInputSize(224)
+
+      // try to access users webcam and stream the images
+      // to the video element
+      const stream = await navigator.mediaDevices.getUserMedia({ video: {} })
+      const videoEl = $('#inputVideo').get(0)
+      videoEl.srcObject = stream
+    }
+
+    function updateResults() {}
+
+	/*$("#spotify_button").hide();
+		$("#mood").click(function(){
+			mood_print();
+			$("#spotify_button").show();
+		});
+		$("#spotify_button").click(function(){
+			open_screen();
+		});*/
+    $(document).ready(function() {
+      renderNavBar('#navbar', 'webcam_face_expression_recognition')
+      initFaceDetectionControls()
+      run()
+	  $("#spotify_button").hide();
+    })
+  </script>
+</body>
+</html>
