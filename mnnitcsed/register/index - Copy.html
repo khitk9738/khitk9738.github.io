@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>MNNIT Allahabad</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="./style.css">
+	  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	  <!--<script src="https://cdn.ckeditor.com/ckeditor5/12.0.0/classic/ckeditor.js"></script>
+	  <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=nxiphkg7aw48phbs3a3zcqk6ijqmud1fi8nqlc9bpx0u2xrr"></script> -->
+	  <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+	  
+  
+</head>
+<body class="auth-false" ><!--style="background-color:black;">   style="background-image:url('img/bgd.jpg');">-->
+	
+	<div style="background-color:black;">
+	<div class="container" >
+		<header  style="background-color:black; color:white;">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-offset-4 col-sm-4 col-xs-offset-5 col-xs-1">
+				 <a href="../index.html"><img class=".d-none"src="../images/mnnit.png" alt="MNNIT Allahabad"  style="width:20%;display: block;margin-left: auto;margin-right: auto;margin-top:8px;"></a>
+				 </div>
+				 <div class="col-lg-5 col-md-5  col-sm-offset-4 col-sm-4 col-xs-offset-5 col-xs-1">
+				 </div>
+				  <div class="col-lg-4  col-md-4  col-sm-12 col-xs-8">
+				 <div class="userAuth unauthenticated pull-right">
+					
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">Register</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
+					</div>
+				 
+				 <div class="userAuth authenticated pull-right">
+					
+					<span class="user-info">
+					  <img src="user.svg" alt="User" class="rounded-circle" >
+					</span>
+					<button type="button" class="btn btn-success" id="logout">Logout</button>
+				 </div>
+				 </div>
+			 </div>
+		</header>
+	</div>
+	</div>
+
+	<main class="unauthenticated">
+      
+	  <section id="somenumbers" class="paddingstandard " style="background-image: url(../img/parallax1.jpg);background-size: cover;background-repeat: repeat;background-position: center center; background-attachment: fixed;">
+		<center>
+			<div class="container" style="color:white;">
+				<!-- Section Title -->
+				
+					
+				
+				
+			</div>
+		</center>
+	</section>
+	 
+    </main>
+  
+    <main class="authenticated">
+	<br>
+	<br>
+	<br>
+	
+	<div class="container">
+      <div class="row">		  
+			<div class="col-lg-3 col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+				
+				<div class="card project" style="width:100%;border-radius:30px;box-shadow: 5px 5px grey;">
+					<center>
+						<br>
+						<span class="user-info" style="display: inline-block;margin: 0 0.5em; font-family: 'Berkshire Swash', cursive;font-size:26px;">
+						  <img src="user.svg" alt="User" style="width:90%;max-width:80em;border-radius:20%;" >
+						</span>
+						<hr/>
+						
+						<div class="file-upload" style="width:60%">
+							  <div class="file-select">
+								<div class="file-select-button" id="fileName">Upload Pic</div>
+								<div class="file-select-name" id="noFile">...</div> 
+								<input type="file" name="file" id="file" accept="image/*">
+							  </div>
+							</div>
+							<span id="linkbox"></span>
+							
+						<!--<span class="adinfo" ></span>	 -->
+						<br>
+					</center>
+				</div>
+				<br/>
+					<center style="color:black;">
+						<span class="adinfo" ></span>
+					<br/><br/>
+					</center>
+				
+			</div>
+			
+			<div class="col-lg-5 col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+				<center>
+				<div class="card project" style="width:100%;border-radius:30px;box-shadow: 5px 5px grey;">
+					<br/>
+					<textarea name="content"></textarea>
+					<br/>
+					<script>
+						CKEDITOR.replace( 'content' );
+					</script>
+				</div>
+				
+					<button type="button" class="btn btn-primary"  style="font-family: 'Kaushan Script';color:#000;background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);"data-toggle="modal" data-target="#addProjectModal">Add Blog</button>
+					<br/>
+					<div id="projects" ></div>
+				<br/><br/>
+					
+				</center>
+			</div>
+			<div class="col-lg-4 col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+				<!--<div class="card project" style="width:98%;border-radius:30px;box-shadow: 5px 5px grey;">-->
+					<br><br>
+					<center>
+						 <button type="button" class="btn btn-primary"  style="font-family: 'Kaushan Script';color:#000;background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);"data-toggle="modal" data-target="#addJournalModal">Add Journal</button>
+					<br/>
+					<div id="journal" ></div>
+					</center>
+					<p style="margin:10px">
+					
+					</p>
+					<br>
+				
+				<br><br>
+					<center>
+					
+						 <button type="button" class="btn btn-primary"  style="font-family: 'Kaushan Script';color:#000;background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);"data-toggle="modal" data-target="#addConfModal">Add Conference Proceedings</button>
+					<br/>
+					<div id="conference" ></div>
+					</center>
+					<p style="margin:10px">
+					
+					</p>
+					<br>
+				
+				<br>
+				<br>
+				
+					<!--<button type="button" class="btn btn-primary" style="font-family: 'Kaushan Script';color:#000;background: linear-gradient(to right, #2980b9, #6dd5fa, #ffffff);" data-toggle="modal" data-target="#addinfoModal">Additional Info</button>-->
+					
+						
+					
+					<!--<div id="filesubmit" >
+							<input type="file" class="file-select" id="file" name="file"  accept="image/*"/>			
+						<span id="linkbox"></span>
+					</div>-->
+					
+			</div>
+			
+	  </div>
+	  </div>
+    </main>
+  <!--</div>-->
+	
+	
+	<div style="background-color:black;color:white;position: fixed;bottom: 0;left: 0;width:100%;height:25px;">
+		<center>
+			<div>
+				<div class="container">
+					<p class="aligncenter">© 2019 MNNIT Allahabad, Prayagraj </p>
+				</div>
+			</div>
+		</center>
+	</div>
+	
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="registerForm" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="registerModalLabel">Register</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">First Name:</label>
+              <input type="text" class="form-control" id="registerFirstName">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Last Name:</label>
+              <input type="text" class="form-control" id="registerLastName">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Email:</label>
+              <input type="text" class="form-control" id="registerEmail">
+            </div>
+			<div class="form-group">
+              <label for="mob">Mobile No.</label>
+              <input type="number" class="form-control" id="registerMob" min="1000000000" max="9999999999">
+            </div>
+			<div class="form-group">
+				<label for="college" class="control-label">College</label>
+				<select id="registerCollege" name="college" class="form-control" onchange="if (this.value=='other'){this.form['registertext'].style.visibility='visible'}else {this.form['registertext'].style.visibility='hidden'};" required>
+					<option value="MNNIT, Allahabad" >MNNIT, Allahabad</option>
+					<option value="other">Other</option>
+				</select>
+				<input type="text" class="form-control" id="registertext" placeholder="Enter College" name="collegetext" style="visibility:hidden;" >
+			</div>
+			<div class="form-group">
+              <label for="recipient-qual" class="control-label">Qualification</label>
+              <input type="text" class="form-control" id="registerQual" placeholder="Enter Qualification">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Password:</label>
+              <input type="password" class="form-control" id="registerPassword" >
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Confirm Password:</label>
+              <input type="password" class="form-control" id="registerConfirmPassword">
+            </div>
+          </div>
+		  
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="doRegister">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="loginForm" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="loginModalLabel">Login</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Email:</label>
+              <input type="text" class="form-control" id="loginEmail">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Password:</label>
+              <input type="password" class="form-control" id="loginPassword">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="doLogin">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="projectForm" name="projectForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addProjectModalLabel">Add Blog Entry</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" class="form-control" id="author" required placeholder="Author Name">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Enter Subject">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Enter Description">
+            </div>
+			
+			<div class="form-group">
+				<div class="file-upload" style="width:15%">
+				  <div class="file-select">
+					<div class="file-select-button" id="fileName">Upload Pic</div>
+					<div class="file-select-name" id="noFile">...</div> 
+					<input type="file" name="bfile" id="bfile" accept="image/*">
+				  </div>
+				</div>
+                <input type="text" class="form-control" id="blogimg" placeholder="Image URL">	
+			</div>
+			
+            <div class="form-group">
+              <label for="day">Date</label>
+              <input type="date" class="form-control" id="day" placeholder="Select Date">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="addJournalModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="journalForm" name="journalForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addJournalModalLabel">Add Journal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="journaledit" required placeholder="Enter Journal Entry ">
+						<!--<script>
+								ClassicEditor
+										.create( document.querySelector( '#journaledit' ) )
+										.then( editor => {
+												console.log( editor );
+										} )
+										.catch( error => {
+												console.error( error );
+										} );
+						</script>-->
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit"  id="jsubmit" class="btn btn-primary  addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+  <div class="modal fade" id="addConfModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="confForm" name="confForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addConfModalLabel">Add Conferences</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="confedit" required placeholder="Enter Conference Proceedings ">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit"  id="cfsubmit" class="btn btn-primary  addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="messageModalLabel">Message</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-footer">
+          <div class="pre-auth">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>&nbsp
+            <span class="">
+              <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>
+              <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>
+            </span>
+          </div>
+          <div class="post-auth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!-- Projects Store JavaScript--->
+ 
+
+  
+  <!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+ 
+   <script src="./script.js"></script>
+</body>
+</html>
