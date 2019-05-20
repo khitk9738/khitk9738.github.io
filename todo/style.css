@@ -20,8 +20,7 @@ ul li {
   position: relative;
   padding: 12px 8px 12px 40px;
   list-style-type: none;
-  background: #3f63ae;/*#9bb0db*/
-  color:white;
+  background: #9bb0db;
   font-size: 18px;
   margin:5px;
   transition: 0.2s;
@@ -36,13 +35,12 @@ ul li {
 /* Set all odd list items to a different color (zebra-stripes) */
 ul li:nth-child(odd) {
   margin:5px;
-  background:#d5def0;
-  color:black;
+  background: #d5def0;
 }
 
 /* Darker background-color on hover */
 ul li:hover {
-  background: #253a66;/*#3f63ae*/
+  background: #3f63ae;
   color: #fff;
 }
 
@@ -103,14 +101,14 @@ ul li.checked::before {
 input {
   border: none;
   width: 75%;
-  padding: 2%;
+  padding: 10px;
   float: left;
   font-size: 16px;
 }
 
 /* Style the "Add" button */
 .addBtn {
-  padding:1%;
+  padding: 10px;
   width: 25%;
   background: #3f63ae;
   color: #fff;

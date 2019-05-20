@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <title>MNNIT Allahabad</title>
+	  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	  <link rel="stylesheet" href="./style.css">
+	  <link rel="shortcut icon" href="../images/mnnit.png">
+	  <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+	  <script src="https://cdn.ckeditor.com/4.11.4/standard/ckeditor.js"></script>
+	  
+  
+</head>
+
+<!----------------------Body Starts------------------------>
+<body class="auth-false" >
+	
+	<div style="background-color:black;">
+	<div class="container" >
+		<header  style="background-color:black; color:white;">
+			<div class="row">
+				<div class="col-lg-3 col-md-3 col-sm-offset-4 col-sm-4 col-xs-offset-5 col-xs-1">
+				 <a href="../index.html"><img class=".d-none"src="../images/mnnit.png" alt="MNNIT Allahabad"  style="width:30%;display: block;margin-left: auto;margin-right: auto;margin-top:8px;"></a>
+				 </div>
+				 <div class="col-lg-5 col-md-5  col-sm-offset-4 col-sm-4 col-xs-offset-5 col-xs-1">
+				 <h1 style="font-weight:100;text-align:center;"><strong>MNNIT Allahabad, Prayagraj</strong></h1></center>
+				 </div>
+				  <div class="col-lg-4  col-md-4  col-sm-12 col-xs-8">
+				 <div class="userAuth unauthenticated pull-right">
+					
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#registerModal">Register</button>
+						<button type="button" class="btn btn-success" data-toggle="modal" data-target="#loginModal">Login</button>
+					</div>
+				 
+				 <div class="userAuth authenticated pull-right">
+					
+					<span class="user-info">
+					  <img src="user.svg" alt="User" class="rounded-circle" >
+					</span>
+					<button type="button"  class="btn btn-success" style="background-color:#29B6F6;" id="logout"><strong>Logout</strong></button>
+				 </div>
+				 </div>
+			 </div>
+		</header>
+	</div>
+	</div>
+	<!---------------------Unauthenticated Section------------------------->
+	<main class="unauthenticated">
+	<br/><br/>
+		<center>
+			<div class="container">
+				<img src="../images/mnnit1.jpg" alt="User" style="width:92%;box-shadow: 0 0 28px 28px white inset;" >
+			</div>
+		</center>
+    </main>
+    <!----------------------End of Unauthenticated Section------------------------>
+	
+	
+	<!----------------------Authenticated Section------------------------>
+    <main class="authenticated">
+	<br>
+	<br>
+	<br>
+	
+	<div class="container">
+      <div class="row">	
+
+			<!----------------------Left Column------------------------>
+			<div class="col-lg-3 col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+				
+				 <!-----------------------------Personal Pic--------------------------> 
+				<div class="card project" style="width:100%;border-radius:30px;box-shadow: 3px 3px grey;">
+					<center>
+						<br>
+						<span class="user-info" style="display: inline-block;margin: 0 0.5em; font-family: 'Berkshire Swash', cursive;font-size:26px;">
+						  <img src="user.svg" alt="User" style="width:100%;max-width:80em;border-radius:20%;" >
+						</span>
+						<hr/>
+						
+						<div class="file-upload" style="width:60%">
+							  <div class="file-select">
+								<div class="file-select-button" id="fileName">Upload Pic</div>
+								<div class="file-select-name" id="noFile">...</div> 
+								<input type="file" name="file" id="file" accept="image/*">
+							  </div>
+							</div>
+							<span id="linkbox"></span>
+							
+						<br>
+					</center>
+				</div>
+				<br/>
+				
+				 <!-----------------------------------------------End of Personal Pic-------------------------------------------------> 
+
+				<!-------------------------------------------------Personal Info-------------------------------------------------------> 
+					<center style="color:black;">
+						<span class="adinfo" ></span>
+					<br/>
+					</center>
+					<br/>
+					
+				 <!------------------------------------------------ End of Personal Info-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Resume-------------------------------------------------------> 	
+					<center>
+					<div class="file-upload" style="width:90%">
+							  <div class="file-select">
+								<div class="file-select-button" id="fileName">Upload Resume</div>
+								<div class="file-select-name" id="noFile">...</div> 
+								<input type="file" name="resfile" id="resfile" accept="application/*">
+							  </div>
+							</div>
+							<span id="resumebox"></span>
+					</center>
+					<br/>
+					
+				<!------------------------------------------------ End of Resume-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Reviews-------------------------------------------------------> 	
+					
+                    <center>
+						<div class="card project" style="background-color:#FEB8B8;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+							<br/>
+							<button type="button"  class="btn btn-primary" style="background-color:#29B6F6;" data-toggle="modal" data-target="#addReviewModal"><strong>Add Reviewer</strong></button>
+							<br/>
+							<div id="review" ></div>
+						</div>
+						<br/>
+				<!------------------------------------------------ End of Reviews-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Outside Interns-------------------------------------------------------> 		
+					
+						<div class="card project" style="background-color:#F1D2FE;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+							<br/>
+							<button type="button"  class="btn btn-primary" style="background-color:#29B6F6;"data-toggle="modal" data-target="#addOutsideModal"><strong>Add Outside Interns</strong></button>
+							<br/>
+							<div id="outside" ></div>
+						</div>
+					</center>
+					<br/><br/>
+				<!------------------------------------------------ End of Outside Interns------------------------------------------------->
+				
+			</div>
+			
+			<!----------------------End of Left Column------------------------>
+			
+			
+			<!----------------------Middle Column------------------------>
+			
+			<div class="col-lg-5 col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+				<center>
+				
+				<!------------------------------------------------ HTML Editor-------------------------------------------------> 
+				<div class="card project" style="width:100%;border-radius:30px;box-shadow: 3px 3px grey;">
+					<br/>
+					<h4>HTML Editor</h4>
+					<textarea name="content"></textarea>
+					<br/>
+					<script>
+						CKEDITOR.replace( 'content' );
+					</script>
+				</div>
+				
+				<!------------------------------------------------ End of HTML Editor-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Blog/Articles-------------------------------------------------------> 
+				
+				<div class="card project" style="width:98%;background-color:#FEB8B8;border-radius:30px;box-shadow: 2px 2px grey;">
+					<br/>
+					<button type="button" class="btn btn-primary" style="background-color:#29B6F6;" data-toggle="modal" data-target="#addProjectModal"><strong>Add Blog</strong></button>
+					<br/>
+					<div id="projects" ></div>
+				</div>
+				<br/>
+				<!------------------------------------------------ End of Blog-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Projects-------------------------------------------------------> 
+				
+				<div class="card project" style="background-color:#F1D2FE;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+					<br/>
+					<button type="button" class="btn btn-primary"  style="background-color:#29B6F6;3" data-toggle="modal" data-target="#addPrjctModal"><strong>Add Projects</strong></button>
+					<br/>
+					<div id="prjct" ></div>
+				</div>
+				<br/>
+				
+				<!------------------------------------------------ End of Projects-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Workshop-------------------------------------------------------> 
+				
+				<div class="card project" style="background-color:#FBFFA4;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+					<br/>
+					<button type="button" class="btn btn-primary" style="background-color:#29B6F6;" data-toggle="modal" data-target="#addWorkshopModal"><strong>Add Workshop</strong></button>
+					<br/>
+					<div id="workshop" ></div>
+				</div>	
+				<br/><br/>
+				
+				<!------------------------------------------------ End of Workshop-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Mtech-------------------------------------------------------> 
+				
+				<div class="card project" style="background-color:#E3FFBD;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+					<br/>
+					<button type="button" class="btn btn-primary"  style="background-color:#29B6F6;" data-toggle="modal" data-target="#addMtechModal"><strong>Add M.Tech Thesis</strong></button>
+					<br/>
+					<div id="mtech" ></div>
+				</div>		
+				<br/><br/>	
+				</center>
+				<!------------------------------------------------ End of Mtech-------------------------------------------------> \
+				
+			</div>
+			
+			<!----------------------End of Middle Column------------------------>
+			
+			
+			<!----------------------Right Column------------------------>
+			
+			
+			<div class="col-lg-4 col-md-10 col-md-offset-1  col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" >
+					<center>
+					
+					<!----------------------------------------------Add Journal------------------------------------------------->  
+					<div class="card project" style="background-color:#E3FFBD;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+						<br/>
+						<button type="button" class="btn btn-primary"  style="background-color:#29B6F6;" data-toggle="modal" data-target="#addJournalModal"><strong>Add Journal</strong></button>
+						<br/>
+						<div id="journal" ></div>
+					</div>
+					</center>
+					<br/><br/>
+					
+				<!------------------------------------------------ End of Journal-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Conferences-------------------------------------------------------> 
+					
+					<center>
+					<div class="card project" style="background-color:#DCFFF9;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+						<br/>
+						 <button type="button" class="btn btn-primary" style="background-color:#29B6F6;" data-toggle="modal" data-target="#addConfModal"><strong>Add Conference Proceedings</strong></button>
+						<br/>
+						<div id="conference" ></div>
+					</div>
+					<br/>
+					
+				<!------------------------------------------------ End of Conferences-------------------------------------------------> 
+
+				<!-------------------------------------------------Add Undergraduate-------------------------------------------------------> 
+					
+					<div class="card project" style="background-color:#FEB8B8;width:98%;border-radius:30px;box-shadow: 2px 2px grey;">
+						<br/>
+						 <button type="button" class="btn btn-primary"  style="background-color:#29B6F6;" data-toggle="modal" data-target="#addUgModal"><strong>Add Undergraduate Projects</strong></button>
+						<br/>
+						<div id="ug" ></div>
+					</div>
+					</center>
+					<br/>
+					<br/>
+				<!------------------------------------------------ End of UG-------------------------------------------------> 
+				
+					
+			</div>
+			<!----------------------End of Right Column------------------------>
+				
+			
+	  </div>
+	  </div>
+    </main>
+  <!--------------------------------End of Authenticated Section------------------------------------>
+	
+	
+	
+	
+	<!--------------------------------Footer------------------------------------>
+	<div style="background-color:black;color:white;position: fixed;bottom: 0;left: 0;width:100%;height:25px;">
+		<center>
+			<div>
+				<div class="container">
+					<p class="aligncenter">© 2019 MNNIT Allahabad, Prayagraj </p>
+				</div>
+			</div>
+		</center>
+	</div>
+	<!--------------------------------End of Footer------------------------------------>
+	
+
+
+<!-----------------------------------------------------Register Modal------------------------------------------------->
+
+  <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="Register" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="registerForm" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="registerModalLabel">Register</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">First Name:</label>
+              <input type="text" class="form-control" id="registerFirstName">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Last Name:</label>
+              <input type="text" class="form-control" id="registerLastName">
+            </div>
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Email:</label>
+              <input type="text" class="form-control" id="registerEmail">
+            </div>
+			<div class="form-group">
+              <label for="mob">Mobile No.</label>
+              <input type="number" class="form-control" id="registerMob" min="1000000000" max="9999999999">
+            </div>
+			<div class="form-group">
+				<label for="college" class="control-label">College</label>
+				<select id="registerCollege" name="college" class="form-control" onchange="if (this.value=='other'){this.form['registertext'].style.visibility='visible'}else {this.form['registertext'].style.visibility='hidden'};" required>
+					<option value="MNNIT, Allahabad" >MNNIT, Allahabad</option>
+					<option value="other">Other</option>
+				</select>
+				<input type="text" class="form-control" id="registertext" placeholder="Enter College" name="collegetext" style="visibility:hidden;" >
+			</div>
+			<div class="form-group">
+              <label for="recipient-qual" class="control-label">Qualification</label>
+              <input type="text" class="form-control" id="registerQual" placeholder="Enter Qualification">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Password:</label>
+              <input type="password" class="form-control" id="registerPassword" >
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Confirm Password:</label>
+              <input type="password" class="form-control" id="registerConfirmPassword">
+            </div>
+          </div>
+		  
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="doRegister">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<!------------------------------------------------ End of Register Modal-------------------------------------------------> 
+
+<!-----------------------------------------------------Login Modal------------------------------------------------------->
+  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="Login" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form id="loginForm" method="POST">
+          <div class="modal-header">
+            <h4 class="modal-title" id="loginModalLabel">Login</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="recipient-name" class="control-label">Email:</label>
+              <input type="text" class="form-control" id="loginEmail">
+            </div>
+            <div class="form-group">
+              <label for="message-text" class="control-label">Password:</label>
+              <input type="password" class="form-control" id="loginPassword">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" id="doLogin">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+<!------------------------------------------------ End of Login Modal-------------------------------------------------> 
+
+<!--------------------------------------------------Add Blog Modal------------------------------------------------------->
+ 
+  <div class="modal fade" id="addProjectModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="projectForm" name="projectForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addProjectModalLabel">Add Blog Entry</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="form-control" id="title" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="author">Author</label>
+              <input type="text" class="form-control" id="author" required placeholder="Author Name">
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" class="form-control" id="subject" placeholder="Enter Subject">
+            </div>
+			<div class="form-group">
+              <label for="id">Blog Id</label>
+              <input type="text" class="form-control" id="id" placeholder="Enter Blog Id">
+            </div>
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input type="text" class="form-control" id="description" placeholder="Enter Description">
+            </div>
+			
+			<div class="form-group">
+				<div class="file-upload" style="width:15%">
+				  <div class="file-select">
+					<div class="file-select-button" id="fileName">Upload Pic</div>
+					<div class="file-select-name" id="noFile">...</div> 
+					<input type="file" name="bfile" id="bfile" accept="image/*">
+				  </div>
+				</div>
+                <input type="text" class="form-control" id="blogimg" placeholder="Image URL">	
+			</div>
+			
+            <div class="form-group">
+              <label for="day">Date</label>
+              <input type="date" class="form-control" id="day" placeholder="Select Date">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ <!------------------------------------------------ End of Blog Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Project Modal-------------------------------------------------------> 
+  
+  <div class="modal fade" id="addPrjctModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="prjctForm" name="prjctForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addProjectModalLabel">Add Project</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="ptitle">Title</label>
+              <input type="text" class="form-control" id="ptitle" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="pauthor">Author</label>
+              <input type="text" class="form-control" id="pauthor" required placeholder="Author Name">
+            </div>
+            <div class="form-group">
+              <label for="psubject">Subject</label>
+              <input type="text" class="form-control" id="psubject" placeholder="Enter Subject">
+            </div>
+			<div class="form-group">
+              <label for="pid">Project Id</label>
+              <input type="text" class="form-control" id="pid" placeholder="Enter Project Id">
+            </div>
+            <div class="form-group">
+              <label for="pdescription">Description</label>
+              <input type="text" class="form-control" id="pdescription" placeholder="Enter Description">
+            </div>
+			
+			<div class="form-group">
+				<div class="file-upload" style="width:15%">
+				  <div class="file-select">
+					<div class="file-select-button" id="fileName">Upload Pic</div>
+					<div class="file-select-name" id="noFile">...</div> 
+					<input type="file" name="pfile" id="pfile" accept="image/*">
+				  </div>
+				</div>
+                <input type="text" class="form-control" id="prjctimg" placeholder="Image URL">	
+			</div>
+			
+            <div class="form-group">
+              <label for="day">Date</label>
+              <input type="date" class="form-control" id="pday" placeholder="Select Date">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ <!------------------------------------------------ End of project Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Mtech Modal-------------------------------------------------------> 
+
+  
+   <div class="modal fade" id="addMtechModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="mtechForm" name="mtechForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addMtechModalLabel">Add M.Tech Thesis</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="mtitle">Title</label>
+              <input type="text" class="form-control" id="mtitle" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="mauthor">Author</label>
+              <input type="text" class="form-control" id="mauthor" required placeholder="Author Name">
+            </div>
+            <div class="form-group">
+              <label for="branch">Branch</label>
+              <input type="text" class="form-control" id="branch" placeholder="Enter Branch">
+            </div>
+            <div class="form-group">
+              <label for="mday">Date</label>
+              <input type="text" class="form-control" id="mday" placeholder="Time">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+ <!------------------------------------------------ End of MTech Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Outsude Intern Modal------------------------------------------------------->   
+  
+  <div class="modal fade" id="addOutsideModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="outsideForm" name="outsideForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addOutsideModalLabel">Add Outside Interns</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="otitle">Title</label>
+              <input type="text" class="form-control" id="otitle" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="oauthor">Author</label>
+              <input type="text" class="form-control" id="oauthor" required placeholder="Author Name">
+            </div>
+            <div class="form-group">
+              <label for="collg">College</label>
+              <input type="text" class="form-control" id="collg" placeholder="Enter College">
+            </div>
+            <div class="form-group">
+              <label for="oday">Date</label>
+              <input type="text" class="form-control" id="oday" placeholder="Time">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ <!------------------------------------------------ End of OutsideIntern Modal-------------------------------------------------> 
+
+<!----------------------------------------------------Undergraduate Modal-------------------------------------------------------> 
+  
+   <div class="modal fade" id="addUgModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="ugForm" name="ugForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addUgModalLabel">Add Undergraduate Projects</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="utitle">Title</label>
+              <input type="text" class="form-control" id="utitle" required placeholder="Enter Title">
+            </div>
+            <div class="form-group">
+              <label for="uauthor">Author</label>
+              <input type="text" class="form-control" id="uauthor" required placeholder="Author Name">
+            </div>
+            <div class="form-group">
+              <label for="uday">Date</label>
+              <input type="text" class="form-control" id="uday" placeholder="Time">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  
+ <!------------------------------------------------ End of UG Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Journal Modal-------------------------------------------------------> 
+  
+  <div class="modal fade" id="addJournalModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="journalForm" name="journalForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addJournalModalLabel">Add Journal</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="journaledit" required placeholder="Enter Journal Entry ">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit"  id="jsubmit" class="btn btn-primary  addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ <!------------------------------------------------ End of Journal Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Workshop Modal------------------------------------------------------->   
+  
+  <div class="modal fade" id="addWorkshopModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="workshopForm" name="workshopForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addWorkshopModalLabel">Add Workshop</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="workshopedit" required placeholder="Enter Workshop Entry ">
+		    </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit"  id="wsubmit" class="btn btn-primary  addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ <!------------------------------------------------ End of Workshop Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Review Modal------------------------------------------------------->  
+  
+  <div class="modal fade" id="addReviewModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="reviewForm" name="reviewForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addReviewModalLabel">Add Reviewer</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="reviewedit" required placeholder="Enter Reviewer Entry ">
+		    </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit"  id="rsubmit" class="btn btn-primary  addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+ <!------------------------------------------------ End of Review Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Add Conferences Modal------------------------------------------------------->   
+  
+  <div class="modal fade" id="addConfModal" tabindex="-1" role="dialog" aria-labelledby="Add Contact" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <form method="POST" id="confForm" name="confForm">
+          <div class="modal-header">
+            <h4 class="modal-title" id="addConfModalLabel">Add Conferences</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="text" class="form-control" id="confedit" required placeholder="Enter Conference Proceedings ">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="submit"  id="cfsubmit" class="btn btn-primary  addValue">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ 
+ <!------------------------------------------------ End of Conference Modal-------------------------------------------------> 
+
+<!-------------------------------------------------Message Modal-------------------------------------------------------> 
+ 
+  <div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="Message" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="messageModalLabel">Message</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        </div>
+        <div class="modal-footer">
+          <div class="pre-auth">
+            <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>&nbsp
+            <span class="">
+              <button type="submit" class="btn btn-primary" data-dismiss="modal" data-toggle="modal" data-target="#registerModal">Register</button>
+              <button type="submit" class="btn btn-success" data-dismiss="modal" data-toggle="modal" data-target="#loginModal">Login</button>
+            </span>
+          </div>
+          <div class="post-auth"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!------------------------------------------------ End of Message Modal-------------------------------------------------> 
+
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+  <script src="./script.js"></script>
+   
+</body>
+<!--------------------End of Body ---------------------->
+</html>

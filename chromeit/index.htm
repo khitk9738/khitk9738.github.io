@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<title>ChromeIT : Browsing Redefined</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body, html {height: 100%}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Helvetica", sans-serif ;font-style: italic;}
+.menu {display: none}
+.bgimg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("chromeitimage.png");
+    min-height: 90%;
+}
+</style>
+<body>
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top w3-hide-small">
+  <div class="w3-bar w3-xlarge w3-black w3-opacity w3-hover-opacity-off" id="myNavbar">
+    <a href="#" class="w3-bar-item w3-button">HOME</a>
+    <a href="#menu" class="w3-bar-item w3-button">MENU</a>
+    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
+    <a href="#foot" class="w3-bar-item w3-button">CONTACT</a>
+  </div>
+</div>
+  
+<!-- Header with image -->
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-display-middle w3-center">
+    <span class="w3-text-white w3-hide-small" style="font-size:100px">Browsing <br>Redefined</span>
+    <p><a href="#menu" class="w3-button w3-xxlarge w3-black">ChromeIT</a></p>
+  </div>
+</header>
+
+
+<!-- About Container -->
+<div class="w3-container w3-padding-64 w3-black w3-xlarge" id="about">
+  <div class="w3-content">
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">About</h1>
+    <p>Chrome-It is an extension which is an attempt to contribute towards improving the browsing experience of the people even in the smallest of ways possible.
+	Besides, it also includes a huge lot of features which are focused on the youth.</p>
+    
+  </div>
+  <img src="https://i.imgur.com/5Su2w2w.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="Popup"><br/>
+  <img src="https://i.imgur.com/3Vn8icL.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="Notes"><br/>
+  <img src="https://i.imgur.com/7Bm1odO.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="Weather"><br/>
+  <img src="https://i.imgur.com/TsiXBB0.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="Todo"><br/>
+  <img src="https://i.imgur.com/BruzLeY.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="TicTacToe"><br/>
+  <img src="https://i.imgur.com/fye9ISI.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="2048 Game"><br/>
+  <img src="https://i.imgur.com/e5X26Xj.jpg" style="width:100%;padding-left:12.5%;padding-right:12.5%;" class="w3-margin-top w3-margin-bottom" alt="Record">
+</div>
+
+
+<!-- Menu Container -->
+<div class="w3-container w3-black w3-padding-64 w3-xxlarge" id="menu">
+  <div class="w3-content">
+  
+    <h1 class="w3-center w3-jumbo" style="margin-bottom:64px">FEATURES</h1>
+    <div class="w3-row w3-center w3-border w3-border-dark-grey">
+      <a href="javascript:void(0)" onclick="openMenu(event, 'main');" id="myLink">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Main Features</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'basic');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Basic Features</div>
+      </a>
+      <a href="javascript:void(0)" onclick="openMenu(event, 'additional');">
+        <div class="w3-col s4 tablink w3-padding-large w3-hover-red">Additional Bot Features</div>
+      </a>
+    </div>
+
+    <div id="main" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>group content</b> </h1>
+      <p class="w3-text-grey">Group tabs based upon the content through the voice  </p>
+      <hr>
+	  
+	  <h1><b>change background #color_name</b> </h1>
+      <p class="w3-text-grey">Change background color for color blind </p>
+      <hr>
+	  
+	  <h1><b>translate #word</b> </h1>
+      <p class="w3-text-grey">Voice translate into language you want </p>
+      <hr>
+	  
+	  <h1><b>Always active</b> </h1>
+      <p class="w3-text-grey">Gesture control for scrolling </p>
+      <hr>
+	  
+	  <h1><b>Play, pause</b> </h1>
+      <p class="w3-text-grey">Voice control for playing/pausing video online</p>
+      <hr>
+	  
+	  <h1><b>Read out loud</b></h1>
+      <p class="w3-text-grey">just select and right click on it.</p>
+      <hr>
+   
+      <h1><b>Record the desktop</b> </h1>
+      <p class="w3-text-grey">click on the popup</p>
+     
+    </div>
+
+    <div id="basic" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Open tab</b></h1>
+      <p class="w3-text-grey">open new tab</p>
+      <hr>
+   
+      <h1><b>Close tab</b> </h1>
+      <p class="w3-text-grey">close tab</p>
+      <hr>
+      
+      <h1><b>Navigate tabs</b> </h1>
+      <p class="w3-text-grey">tab #tab_no</p>
+      <hr>
+
+      <h1><b>Minimize window</b></h1>
+      <p class="w3-text-grey">minimize</p>
+	  <hr>
+	  
+	  <h1><b>Add to Favorites</b></h1>
+      <p class="w3-text-grey">add bookmark</p>
+	  <hr>
+
+	  <h1><b>Zoom out</b></h1>
+      <p class="w3-text-grey">zoom out</p>
+	  <hr>
+
+	  <h1><b>Zoom in</b></h1>
+      <p class="w3-text-grey">zoom in</p>
+	  <hr>
+	  
+	  <h1><b>Open direct URL</b></h1>
+      <p class="w3-text-grey">#website name</p>
+	  <hr>
+	  
+	  <h1><b>Back to previous URL</b></h1>
+      <p class="w3-text-grey">backward</p>
+	  <hr>
+	  
+	  <h1><b>Print Screen</b></h1>
+      <p class="w3-text-grey">print</p>
+	  <hr>
+	  
+	  <h1><b>Settings, history, downloads</b></h1>
+      <p class="w3-text-grey">#name</p>
+	  <hr>
+	  
+	  <h1><b>Open incognito</b></h1>
+      <p class="w3-text-grey">incognito</p>
+	  
+	 
+	  
+    </div>
+
+
+    <div id="additional" class="w3-container menu w3-padding-32 w3-white">
+      <h1><b>Remember your name</b></h1>
+      <p class="w3-text-grey">call me #your_name</p>
+      <hr>
+   
+      <h1><b>Speak a random joke</b> </h1>
+      <p class="w3-text-grey">tell me a joke</p>
+      <hr>
+      
+      <h1><b>Tell weather</b> </h1>
+      <p class="w3-text-grey">weather #city_name</p>
+      <hr>
+
+      <h1><b>Customize trigger</b></h1>
+      <p class="w3-text-grey">can be set using pop-up menu in the extension</p>
+	  <hr>
+	  
+	  <h1><b>Play game</b></h1>
+      <p class="w3-text-grey">let us play</p>
+	  <hr>
+
+	  <h1><b>Navigate through google search</b></h1>
+      <p class="w3-text-grey">link #link_no</p>
+	  <hr>
+
+	  <h1><b>Search Directly on wikipedia</b></h1>
+      <p class="w3-text-grey">#title wikipedia</p>
+	  <hr>
+	  
+	  <h1><b>Search Directly on YouTube</b></h1>
+      <p class="w3-text-grey">search #title on youtube</p>
+	  <hr>
+	  
+	  <h1><b>Share directly on twitter</b></h1>
+      <p class="w3-text-grey">select the text and share using context menu</p>
+	  <hr>
+	  
+	  <h1><b>Opening inbox</b></h1>
+      <p class="w3-text-grey">my inbox</p>
+	  <hr>
+	  
+	  <h1><b>Reading news</b></h1>
+      <p class="w3-text-grey">news</p>
+	  <hr>
+	
+		<h1><b>To-do list</b> </h1>
+      <p class="w3-text-grey">listing #value for adding an item into the list</p>
+      <hr>
+	  
+	  <h1><b>Add notes</b> </h1>
+      <p class="w3-text-grey">click on the button on popup</p>
+      <hr>
+	  
+	  <h1><b>Tic-tac-toe</b> </h1>
+      <p class="w3-text-grey">cross and zero</p>
+      <hr>
+	  
+	  <h1><b>Play 2048</b> </h1>
+      <p class="w3-text-grey">Just click and play in the popup.</p>
+
+
+  </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer id="foot" class="w3-center w3-blue w3-dark-gray w3-padding-48 w3-xxlarge">
+  <p>Developed by: </p><p><a href="https://www.github.com/khitk9738" title="Github Link" target="_blank" class="w3-hover-text-green">Akshit Sharma</a></p><p>Akshita Singh</p><p>Arun Kumar</p><p>Kapil Kumar</p><p>Mayank Meena</p><p>Prateek Kumar</p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+     tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-red";
+}
+document.getElementById("myLink").click();
+</script>
+
+
+</body>
+</html>
